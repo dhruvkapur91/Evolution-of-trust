@@ -1,11 +1,13 @@
 package org.npci.evolutionoftrust;
 
+import static org.npci.evolutionoftrust.MoveType.CORPORATE;
+
 public class Game {
     public Game(Player one, Player two, int numberOfRounds) {
 
     }
 
     public Score score() {
-        return new Score(2, 2);
+        return new RuleEngine(CORPORATE, CORPORATE).score();
     }
 }
