@@ -12,4 +12,13 @@ class PlayerTest {
     void playerShouldAlwaysCorporate() {
         assertThat(new Player("a").getMove(), is(CORPORATE));
     }
+
+    @Test
+    void shouldGiveScoreForTheRoundThatHasBeenPlayed() {
+        Player player = new Player("a");
+        player.setScoreFor(1,0);
+
+        assertThat(player.scoreAt(1), is(0));
+    }
+
 }
