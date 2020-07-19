@@ -11,14 +11,6 @@ public class Score {
         this.playerTwo = playerTwo;
     }
 
-    public int getPlayer1Score() {
-        return playerOne;
-    }
-
-    public int getPlayer2Score() {
-        return playerTwo;
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
