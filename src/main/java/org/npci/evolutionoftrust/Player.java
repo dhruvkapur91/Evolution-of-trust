@@ -12,7 +12,10 @@ public class Player {
     }
 
     public int scoreAt(int roundNumber) {
-        return scores.get(roundNumber);
+        if(scores.containsKey(roundNumber)) {
+            return scores.get(roundNumber);
+        }
+        throw new RoundNotPlayedYetException();
     }
 
     public MoveType getMove() {
