@@ -32,4 +32,8 @@ public class Score {
                 ", playerTwo=" + playerTwo +
                 '}';
     }
+
+    public Score times(int multipler) {
+        return new Score(this.playerOne * multipler,this.playerTwo * multipler);
+    }
 }
