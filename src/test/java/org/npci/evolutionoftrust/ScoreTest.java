@@ -32,4 +32,10 @@ class ScoreTest {
         scores.add(new Score(2,2));
         assertThat(scores.size(), is(1));
     }
+
+    @Test
+    void toStringShouldHelpInDebugging() {
+        String actual = new Score(2, 2).toString();
+        assertThat(actual, is("Score{playerOne=2, playerTwo=2}"));
+    }
 }
