@@ -2,7 +2,12 @@ package org.npci.evolutionoftrust;
 
 import org.junit.jupiter.api.Test;
 
+import java.util.HashSet;
+
 import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.*;
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.*;
 
 class ScoreTest {
     @Test
@@ -20,4 +25,11 @@ class ScoreTest {
         assertNotEquals(new Score(2,2), 22);
     }
 
+    @Test
+    void shouldNotHaveDuplicateScoresInASet() {
+        HashSet<Score> scores = new HashSet<>();
+        scores.add(new Score(2,2));
+        scores.add(new Score(2,2));
+        assertThat(scores.size(), is(1));
+    }
 }

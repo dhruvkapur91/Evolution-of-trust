@@ -1,5 +1,7 @@
 package org.npci.evolutionoftrust;
 
+import java.util.Objects;
+
 public class Score {
     private final int playerOne;
     private final int playerTwo;
@@ -26,4 +28,8 @@ public class Score {
                 playerTwo == score.playerTwo;
     }
 
+    @Override
+    public int hashCode() {
+        return Objects.hash(playerOne, playerTwo);
+    }
 }
