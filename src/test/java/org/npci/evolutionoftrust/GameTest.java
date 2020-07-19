@@ -17,4 +17,15 @@ public class GameTest {
         assertThat(one.scoreAt(1), is(2));
         assertThat(two.scoreAt(1), is(2));
     }
+
+    @Test
+    void shouldBeAbleToPlayTwoRound() {
+        Player one = new Player("one");
+        Player two = new Player("two");
+        Score actualScore = new Game(one, two, 2).score();
+
+        assertThat(actualScore, is(new Score(4,4))); // TODO - One assertion per test?
+//        assertThat(one.scoreAt(1), is(4));
+//        assertThat(two.scoreAt(1), is(4));
+    }
 }
