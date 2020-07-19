@@ -8,7 +8,7 @@ public class RuleEngine {
 
     }
 
-    public List<Integer> score() {
-        return Arrays.asList(2, 2);
+    public Score score() {
+        return new Score(2,2);
     }
 }

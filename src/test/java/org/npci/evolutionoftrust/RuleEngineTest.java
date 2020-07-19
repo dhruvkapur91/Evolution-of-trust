@@ -12,9 +12,9 @@ import static org.npci.evolutionoftrust.MoveType.CORPORATE;
 public class RuleEngineTest {
     @Test
     void shouldHaveScoreOfDoubleTwoWhenBothPlayersCorporate() {
-        List<Integer> scores = new RuleEngine(CORPORATE, CHEAT).score();
+        Score score = new RuleEngine(CORPORATE, CHEAT).score();
         Score expectedScore = new Score(2, 2);
-        assertThat(scores.get(0), is(expectedScore.getPlayer1Score()));
-        assertThat(scores.get(1), is(expectedScore.getPlayer2Score()));
+
+        assertThat(score, is(expectedScore));
     }
 }
