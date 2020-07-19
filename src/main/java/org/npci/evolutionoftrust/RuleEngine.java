@@ -16,6 +16,9 @@ public class RuleEngine {
         if(one.equals(CHEAT) && two.equals(CORPORATE)) {
             return new Score(3,-1);
         }
+        if(one.equals(CORPORATE) && two.equals(CHEAT)) {
+            return new Score(-1,3);
+        }
         if(one.equals(CHEAT)) {
             return new Score(-1,-1);
         }
