@@ -23,4 +23,12 @@ public class RuleEngineTest {
 
         assertThat(score, is(expectedScore));
     }
+
+    @Test
+    void shouldHaveScoreOfThreeAndMinusOneWhenFirstPlayerCheatsButOtherCorporates() {
+        Score score = new RuleEngine(CHEAT, CORPORATE).score();
+        Score expectedScore = new Score(3, -1);
+
+        assertThat(score, is(expectedScore));
+    }
 }

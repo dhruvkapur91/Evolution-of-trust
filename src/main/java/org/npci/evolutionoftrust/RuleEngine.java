@@ -1,6 +1,7 @@
 package org.npci.evolutionoftrust;
 
 import static org.npci.evolutionoftrust.MoveType.CHEAT;
+import static org.npci.evolutionoftrust.MoveType.CORPORATE;
 
 public class RuleEngine {
     private final MoveType one;
@@ -12,6 +13,9 @@ public class RuleEngine {
     }
 
     public Score score() {
+        if(one.equals(CHEAT) && two.equals(CORPORATE)) {
+            return new Score(3,-1);
+        }
         if(one.equals(CHEAT)) {
             return new Score(-1,-1);
         }

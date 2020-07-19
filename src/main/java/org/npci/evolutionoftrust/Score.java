@@ -26,7 +26,7 @@ public class Score {
     }
 
     @Override
-    public String toString() {
+    public String toString() { // TODO - write test
         return "Score{" +
                 "playerOne=" + playerOne +
                 ", playerTwo=" + playerTwo +
