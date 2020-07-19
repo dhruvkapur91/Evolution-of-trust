@@ -7,7 +7,7 @@ public class Player {
     }
 
     public int scoreAt(int roundNumber) { // TODO - not unit tested yet.
-        return 2;
+        return 2 * roundNumber;
     }
 
     public MoveType getMove() {

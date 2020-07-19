@@ -1,9 +1,9 @@
 package org.npci.evolutionoftrust;
 
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
+
 import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.Matchers.*;
+import static org.hamcrest.Matchers.is;
 
 public class GameTest {
 
@@ -25,7 +25,9 @@ public class GameTest {
         Score actualScore = new Game(one, two, 2).score();
 
         assertThat(actualScore, is(new Score(4,4))); // TODO - One assertion per test?
-//        assertThat(one.scoreAt(1), is(4));
-//        assertThat(two.scoreAt(1), is(4));
+        assertThat(one.scoreAt(1), is(2));
+        assertThat(two.scoreAt(1), is(2));
+        assertThat(one.scoreAt(2), is(4));
+        assertThat(two.scoreAt(2), is(4));
     }
 }
