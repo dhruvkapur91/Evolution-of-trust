@@ -24,4 +24,12 @@ public class Score {
     public int hashCode() {
         return Objects.hash(playerOne, playerTwo);
     }
+
+    @Override
+    public String toString() {
+        return "Score{" +
+                "playerOne=" + playerOne +
+                ", playerTwo=" + playerTwo +
+                '}';
+    }
 }

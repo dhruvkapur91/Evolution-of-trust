@@ -4,6 +4,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;
+import static org.npci.evolutionoftrust.MoveType.CHEAT;
 import static org.npci.evolutionoftrust.MoveType.CORPORATE;
 
 public class RuleEngineTest {
@@ -11,6 +12,14 @@ public class RuleEngineTest {
     void shouldHaveScoreOfDoubleTwoWhenBothPlayersCorporate() {
         Score score = new RuleEngine(CORPORATE, CORPORATE).score();
         Score expectedScore = new Score(2, 2);
+
+        assertThat(score, is(expectedScore));
+    }
+
+    @Test
+    void shouldHaveScoreOfDoubleMinusOneWhenBothPlayersCheat() {
+        Score score = new RuleEngine(CHEAT, CHEAT).score();
+        Score expectedScore = new Score(-1, -1);
 
         assertThat(score, is(expectedScore));
     }
