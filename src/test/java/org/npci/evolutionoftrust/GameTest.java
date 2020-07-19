@@ -27,7 +27,7 @@ public class GameTest {
         assertThat(actualScore, is(new Score(4,4))); // TODO - One assertion per test?
         assertThat(one.scoreAt(1), is(2));
         assertThat(two.scoreAt(1), is(2));
-        assertThat(one.scoreAt(2), is(4));
-        assertThat(two.scoreAt(2), is(4));
+        assertThat(one.scoreAt(2), is(2));
+        assertThat(two.scoreAt(2), is(2));
     }
 }

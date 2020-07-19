@@ -36,4 +36,12 @@ public class Score {
     public Score times(int multipler) {
         return new Score(this.playerOne * multipler,this.playerTwo * multipler);
     }
+
+    public int getForPlayerOne() {
+        return playerOne;
+    }
+
+    public int getForPlayerTwo() {
+        return playerTwo;
+    }
 }

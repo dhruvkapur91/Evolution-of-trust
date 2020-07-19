@@ -15,6 +15,13 @@ public class Game {
 
     public Score score() {
         RuleEngine ruleEngine = new RuleEngine(one.getMove(), two.getMove());
-        return ruleEngine.score().times(numberOfRounds);
+        Score score = ruleEngine.score();
+
+        for(int i = 0; i < numberOfRounds; i++) {
+            one.setScoreFor(i+1, score.getForPlayerOne());
+            two.setScoreFor(i+1, score.getForPlayerTwo());
+        }
+
+        return score.times(numberOfRounds);
     }
 }

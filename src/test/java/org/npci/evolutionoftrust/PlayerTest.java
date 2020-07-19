@@ -21,4 +21,14 @@ class PlayerTest {
         assertThat(player.scoreAt(1), is(0));
     }
 
+    @Test
+    void shouldGiveScoreForAnyRoundThatHasBeenPlayed() {
+        Player player = new Player("a");
+        player.setScoreFor(1,0);
+        player.setScoreFor(2,1);
+
+        assertThat(player.scoreAt(1), is(0));
+        assertThat(player.scoreAt(2), is(1));
+    }
+
 }

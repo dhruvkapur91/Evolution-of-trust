@@ -1,18 +1,18 @@
 package org.npci.evolutionoftrust;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import static org.npci.evolutionoftrust.MoveType.CORPORATE;
 
 public class Player {
-    private Integer score;
+    private final Map<Integer,Integer> scores = new HashMap<>();
 
     public Player(String name) {
     }
 
-    public int scoreAt(int roundNumber) { // TODO - not unit tested yet.
-        if(this.score == null) {
-            return 2 * roundNumber;
-        }
-        return score;
+    public int scoreAt(int roundNumber) {
+        return scores.get(roundNumber);
     }
 
     public MoveType getMove() {
@@ -20,6 +20,6 @@ public class Player {
     }
 
     public void setScoreFor(int roundNumber, int score) {
-        this.score = score;
+        this.scores.put(roundNumber, score);
     }
 }
